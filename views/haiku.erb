@@ -1,0 +1,44 @@
+<!doctype html>
+<style>
+	* { box-sizing: border-box }
+	body {
+		font-family: "Helvetica", sans-serif;
+	}
+	.content {
+		max-width: 1000px;
+		margin: 30px auto;
+	}
+	section {
+		width: 30%;
+		float: left;
+		height: 150px;
+	}
+	section .inner {		
+		box-shadow: 0 4px 4px rgba(0,0,0,0.06);
+		margin: 10px;
+		padding: 20px;
+		font-size: 18px;
+		line-height: 1.3em;
+	}
+</style>
+
+<div class="content">
+	<nav>
+	<a href="javascript:(function(){ window.location='<%= @app_url %>/haiku?url='+encodeURIComponent(window.location); })();">Haiku?</a>
+	</nav>
+
+	<% @haiku.each do |haiku| %>
+		<section>
+			<div class="inner">
+				<%= haiku.join("<br>\n") %>
+				<small><a href="/share?text=<%= json_and_escape(haiku) %>">share</a></small>
+			</div>
+		</section>
+	<% end %>
+</div>
+
+<!--
+
+<%= @text =>
+
+-->

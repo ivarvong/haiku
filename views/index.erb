@@ -1,0 +1,31 @@
+<!doctype html>
+<style>
+	* { box-sizing: border-box }
+	body {
+		font-family: "Helvetica", sans-serif;
+	}
+	.content {
+		max-width: 1000px;
+		margin: 30px auto;
+	}
+	section {
+		width: 30%;
+		float: left;
+		height: 150px;
+	}
+	section .inner {		
+		box-shadow: 0 4px 4px rgba(0,0,0,0.06);
+		margin: 10px;
+		padding: 20px;
+		font-size: 18px;
+		line-height: 1.3em;
+	}
+</style>
+
+<div class="content">
+	<nav>
+	Bookmarklet: <a href="javascript:(function(){ window.location='<%= @app_url %>/haiku?url='+encodeURIComponent(window.location); })();">Haiku?</a>
+	</nav>
+
+	Need a suggestion? Try: <a href="/haiku?url=https%3A%2F%2Fwww.themarshallproject.org%2F2015%2F02%2F28%2Fattica-s-ghosts">Attica</a>
+</div>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+	<meta property="og:image" content="<%= @app_url %>/share-image?text=<%= json_and_escape(@text) %>">
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Haiku">
+	<meta property="og:url" content="<%= @full_url %>">
+	<meta property="og:title" content="HaikuBot">
+	<meta property="og:description" content="<%= @text.join(" • ") %>">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@ivarvong">
+	<meta name="twitter:title" content="haiku_bot">
+	<meta name="twitter:description" content="<%= @text.join(" • ") %>">
+	<meta name="twitter:image:src" content="<%= @app_url %>/share-image?text=<%= json_and_escape(@text) %>">
+</head>
+<body>
+	<img src="<%= @app_url %>/share-image?text=<%= json_and_escape(@text) %>">
+</body>
+</html>
