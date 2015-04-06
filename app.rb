@@ -23,6 +23,7 @@ helpers do
 end
 
 get '/' do
+	@app_url = "#{request.scheme}://#{request.host_with_port}"
 	erb :index
 end
 
